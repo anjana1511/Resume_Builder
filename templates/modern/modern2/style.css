@@ -1,0 +1,659 @@
+/*=========================
+        RESET
+=========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#ececec;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#555;
+}
+
+.resume-container{
+
+    width:210mm;
+    min-height:297mm;
+
+    margin:20px auto;
+
+    background:#fff;
+
+    display:flex;
+
+    border:2px solid #d8d8d8;
+
+    border-radius:22px;
+
+    overflow:hidden;
+}
+
+
+/*=========================
+        LEFT SIDE
+=========================*/
+
+.left-side{
+
+    width:30%;
+
+    flex-shrink:0;
+
+    background:#f7f7f7;
+
+    padding:20px;
+
+    border-right:2px solid #dcdcdc;
+
+}
+
+
+/*=========================
+        PROFILE
+=========================*/
+
+.profile-box{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.profile-img{
+
+    width:120px;
+
+    height:120px;
+
+    display:block;
+
+    margin:auto;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:8px solid #ececec;
+
+}
+
+.name{
+
+    margin-top:15px;
+
+    font-size:28px;
+
+    line-height:1.2;
+
+    font-weight:700;
+
+    color:#666;
+
+    text-transform:uppercase;
+
+}
+
+.name span{
+
+    display:block;
+
+}
+
+.designation{
+
+    margin-top:8px;
+
+    color:#777;
+
+    font-size:14px;
+
+    letter-spacing:1px;
+
+}
+
+
+/*=========================
+        SIDEBAR BOX
+=========================*/
+
+.sidebar-section{
+
+    margin-top:18px;
+
+    padding:15px;
+
+    border:2px solid #d9d9d9;
+
+    border-radius:10px;
+
+    background:#fff;
+
+}
+
+.sidebar-section h3{
+
+    text-align:center;
+
+    text-transform:uppercase;
+
+    color:#666;
+
+    font-size:15px;
+
+    letter-spacing:1px;
+
+    margin-bottom:15px;
+
+    padding-bottom:8px;
+
+    border-bottom:1px solid #d9d9d9;
+
+}
+
+
+/*=========================
+        CONTACT
+=========================*/
+
+.contact-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    margin-bottom:12px;
+
+}
+
+.contact-item:last-child{
+
+    margin-bottom:0;
+
+}
+
+.contact-item i{
+
+    width:18px;
+
+    color:#666;
+
+    margin-top:3px;
+
+    flex-shrink:0;
+
+}
+
+.contact-item span{
+
+    color:#666;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    word-break:break-word;
+
+    overflow-wrap:anywhere;
+
+}
+
+/*=========================
+        SKILLS
+=========================*/
+.skill-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:2px;
+}
+.vertical-rating{
+    display:flex;
+    align-items:flex-end;
+    gap:4px;
+    height:20px;
+}
+
+.vertical-rating span{
+    width:5px;
+    background:#e2e2e2;
+    border-radius:3px 3px 0 0;
+}
+
+/* Empty Bars */
+.vertical-rating span:nth-child(1){height:6px;}
+.vertical-rating span:nth-child(2){height:9px;}
+.vertical-rating span:nth-child(3){height:12px;}
+.vertical-rating span:nth-child(4){height:15px;}
+.vertical-rating span:nth-child(5){height:18px;}
+
+/* Filled Bars */
+.vertical-rating .fill{
+    background:#666;
+}
+
+
+.skill-item{
+    display:block;
+    font-size:13px;
+    color:#666;
+    margin-top:12px;
+    margin-bottom:4px;
+}
+
+/*=========================
+        LANGUAGES
+=========================*/
+
+.language-item{
+    display:block;
+    font-size:13px;
+    color:#666;
+    margin-top:12px;
+    margin-bottom:6px;
+}
+
+.language-progress{
+
+    width:100%;
+
+    height:6px;
+
+    background:#e2e2e2;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:12px;
+
+}
+
+.language-progress-fill{
+
+    height:100%;
+
+    background:#666;
+
+    border-radius:20px;
+
+}
+
+
+/*=========================
+        INTERESTS
+=========================*/
+
+.interest-item{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+}
+
+.hobby-tag{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    background:#efefef;
+
+    color:#555;
+
+    font-size:12px;
+
+    border:1px solid #d9d9d9;
+
+}
+
+
+/*=========================
+        RIGHT SIDE
+=========================*/
+
+.right-side{
+
+    width:70%;
+
+    background:#fff;
+
+    padding:30px;
+
+}
+
+
+/*=========================
+      RESUME SECTION
+=========================*/
+
+.resume-section{
+
+    margin-bottom:32px;
+
+}
+
+.resume-section:last-child{
+
+    margin-bottom:0;
+
+}
+
+.resume-section h2{
+
+    color:#666;
+
+    font-size:18px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    margin-bottom:18px;
+
+    padding-bottom:8px;
+
+    border-bottom:2px solid #d9d9d9;
+
+}
+
+.resume-section p{
+
+    color:#666;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    text-align:justify;
+
+}
+/*=========================
+        TIMELINE
+=========================*/
+
+.timeline{
+
+    position:relative;
+
+    padding-left:28px;
+
+    margin-bottom:25px;
+
+}
+
+.timeline:last-child{
+
+    margin-bottom:0;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:8px;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#666;
+
+}
+
+.timeline::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:4px;
+
+    top:18px;
+
+    bottom:-28px;
+
+    width:2px;
+
+    background:#d9d9d9;
+
+}
+
+.timeline:last-child::after{
+
+    display:none;
+
+}
+
+
+/*=========================
+      TIMELINE CONTENT
+=========================*/
+
+.timeline h4{
+
+    font-size:15px;
+
+    color:#444;
+
+    margin-bottom:4px;
+
+    font-weight:600;
+
+}
+
+.timeline span{
+
+    display:block;
+
+    font-size:13px;
+
+    color:#888;
+
+    margin-bottom:8px;
+
+    line-height:1.5;
+
+}
+
+.timeline p{
+
+    font-size:13px;
+
+    color:#666;
+
+    line-height:1.7;
+
+    text-align:justify;
+
+}
+
+
+/*=========================
+      EXPERIENCE
+=========================*/
+
+.resume-section:nth-child(2) .timeline{
+
+    margin-bottom:28px;
+
+}
+
+
+/*=========================
+      EDUCATION
+=========================*/
+
+.resume-section:nth-child(3) .timeline{
+
+    margin-bottom:22px;
+
+}
+
+
+/*=========================
+      CERTIFICATES
+=========================*/
+
+.resume-section:nth-child(4) .timeline{
+
+    margin-bottom:18px;
+
+}
+
+
+/*=========================
+      LINKS
+=========================*/
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+
+/*=========================
+      PRINT
+=========================*/
+
+@media print{
+
+body{
+
+    background:#fff;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.resume-container{
+
+    width:210mm;
+
+    min-height:297mm;
+
+    margin:0;
+
+    border:none;
+
+    border-radius:0;
+
+    box-shadow:none;
+
+}
+
+.left-side{
+
+    page-break-inside:avoid;
+
+}
+
+.right-side{
+
+    page-break-inside:avoid;
+
+}
+
+.resume-section{
+
+    page-break-inside:avoid;
+
+}
+
+}
+
+
+/*=========================
+      SCROLLBAR
+=========================*/
+
+::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#bfbfbf;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#efefef;
+
+}
+
+
+/*=========================
+      IMAGE SAFETY
+=========================*/
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+/*=========================
+      ICONS
+=========================*/
+
+.bi{
+
+    font-size:14px;
+
+}
+
+
+/*=========================
+      SMALL TEXT
+=========================*/
+
+small{
+
+    color:#888;
+
+}
+
+
+/*=========================
+      SELECTION
+=========================*/
+
+::selection{
+
+    background:#555;
+
+    color:#fff;
+
+}

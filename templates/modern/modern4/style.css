@@ -1,0 +1,575 @@
+/*=========================================
+            MODERN 4 - PART 1
+==========================================*/
+
+:root{
+    --primary:#EE6C4D;
+    --secondary:#F4F3EE;
+    --white:#ffffff;
+    --light:#f7f7f9;
+    --text:#444;
+    --heading:#2d2d2d;
+    --border:#ececec;
+    --shadow:0 8px 30px rgba(0,0,0,.12);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#d8d6d1;
+    font-family:'Segoe UI',sans-serif;
+    color:var(--text);
+}
+
+/*=========================
+        MAIN CONTAINER
+==========================*/
+
+.resume-container{
+    width:210mm;
+    min-height:297mm;
+    margin:30px auto;
+    display:flex;
+    background:linear-gradient(180deg,var(--primary),var(--secondary));
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+}
+
+/*=========================
+        LEFT SIDEBAR
+==========================*/
+
+.left-side{
+    width:33%;
+    color:#14213d;
+}
+
+.sidebar{
+    padding:35px 28px;
+}
+
+/*=========================
+      PROFILE SECTION
+==========================*/
+
+.profile-box{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.profile-img{
+    display:block;
+    width:155px;
+    height:155px;
+    object-fit:cover;
+    border-radius:50%;
+    border:6px solid rgba(255,255,255,.35);
+    background:#fff;
+    margin:0 auto 18px;
+}
+
+.name{
+    font-size:28px;
+    font-weight:700;
+    line-height:1.2;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#14213d;
+}
+
+.name span{
+    display:block;
+    font-weight:300;
+}
+
+.designation{
+    margin-top:10px;
+    font-size:14px;
+    color:#14213d;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+/*=========================
+     SIDEBAR SECTIONS
+==========================*/
+
+.sidebar-section{
+    margin-top:30px;
+}
+
+.sidebar-section h3{
+    font-size:17px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:18px;
+    padding-bottom:8px;
+    border-bottom:1px solid rgba(255,255,255,.35);
+    color:#14213d;
+}
+
+/*=========================
+      CONTACT INFO
+==========================*/
+
+.contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:14px;
+    font-size:14px;
+    line-height:1.5;
+    word-break:break-word;
+}
+
+.contact-item i{
+    width:18px;
+    font-size:15px;
+    margin-top:3px;
+    flex-shrink:0;
+}
+
+.contact-item span{
+    flex:1;
+    word-break:break-word;
+}
+
+/*=========================
+      SKILLS
+==========================*/
+.skill-item{
+     margin-bottom: 8px;
+     color: #14213d;
+}
+
+/* Progress bars generated from renderSkill() */
+
+.skill-progress{
+ width:100%;
+    height:6px;
+    background:#ffffff;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:5px;
+}
+
+.skill-progress-fill{
+ display:block;
+    height:100%;
+    background:#eb5e28;
+    border-radius:20px;
+}
+
+/*=========================
+      LANGUAGES
+==========================*/
+.skill-stars{
+    display:flex;
+    gap:3px;
+}
+
+.skill-stars i{
+    color:#489fb5;
+    font-size:13px;
+}
+
+.skill-stars .active{
+    color:#555b6e;
+}
+
+.language-item{
+    display: block;
+     margin-bottom: 8px;
+     color: #14213d;
+}
+
+
+/* lanuage progress */
+
+.language-progress{
+    margin-bottom:16px;
+}
+
+/*=========================
+      INTERESTS
+==========================*/
+
+.interest-item{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.interest-item span{
+    background:#eb5e28;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    color:#ffffff;
+}
+/*=========================================
+            MODERN 4 - PART 2
+==========================================*/
+
+/*=========================
+        RIGHT SIDE
+==========================*/
+
+.right-side{
+    width:67%;
+    background:#fff;
+    border-radius:45px 0 0 45px;
+    padding:45px 42px;
+    color:var(--text);
+    min-height:297mm;
+}
+
+/*=========================
+      RESUME SECTION
+==========================*/
+
+.resume-section{
+    margin-bottom:35px;
+}
+
+.resume-section:last-child{
+    margin-bottom:0;
+}
+
+/*=========================
+        SECTION TITLE
+==========================*/
+
+.resume-section h2{
+    position:relative;
+    color:var(--primary);
+    font-size:22px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:22px;
+    padding-bottom:8px;
+}
+
+.resume-section h2::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:65px;
+    height:3px;
+    background:linear-gradient(to right,var(--primary),var(--secondary));
+    border-radius:10px;
+}
+
+/*=========================
+        PROFILE TEXT
+==========================*/
+
+.resume-section > p{
+    font-size:14px;
+    line-height:1.8;
+    text-align:justify;
+    color:#555;
+}
+
+/*=========================
+        TIMELINE
+==========================*/
+
+.timeline{
+    position:relative;
+    padding-left:28px;
+    margin-bottom:28px;
+}
+
+.timeline:last-child{
+    margin-bottom:0;
+}
+
+
+/* Circle */
+
+.timeline::after{
+    content:"";
+    position:absolute;
+    left:0;
+    top:4px;
+    width:8px;
+    height:8px;
+    transform:rotate(45deg);
+    border-radius:0;
+    background:var(--primary);
+    border:3px solid #fff;
+    box-shadow:0 0 0 2px var(--primary);
+}
+
+/* Last item */
+
+.timeline:last-child::before{
+    display:none;
+}
+
+/*=========================
+        JOB TITLE
+==========================*/
+
+.timeline h4{
+    font-size:17px;
+    color:var(--heading);
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+/*=========================
+      COMPANY / DATE
+==========================*/
+
+.timeline span{
+    display:block;
+    font-size:13px;
+    color:#777;
+    margin-bottom:10px;
+    line-height:1.6;
+}
+
+/*=========================
+      DESCRIPTION
+==========================*/
+
+.timeline p{
+    font-size:14px;
+    line-height:1.7;
+    color:#555;
+    text-align:justify;
+}
+
+/*=========================
+      HOVER EFFECT
+==========================*/
+
+.timeline{
+    transition:.3s;
+}
+
+.timeline:hover{
+    transform:translateX(4px);
+}
+
+.timeline:hover::after{
+    background:var(--secondary);
+    box-shadow:0 0 0 2px var(--secondary);
+}
+
+/*=========================
+      LINKS (if any)
+==========================*/
+
+.right-side a{
+    color:var(--primary);
+    text-decoration:none;
+}
+
+.right-side a:hover{
+    text-decoration:underline;
+}
+
+/*=========================================
+            MODERN 4 - PART 3
+==========================================*/
+
+/*=========================
+      TEXT WRAPPING
+==========================*/
+
+.contact-item span,
+.timeline span,
+.timeline p,
+.resume-section p{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+/*=========================
+      IMAGES
+==========================*/
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/*=========================
+      SPACING
+==========================*/
+
+.sidebar-section:last-child{
+    margin-bottom:0;
+}
+
+.timeline:last-child{
+    margin-bottom:0;
+}
+
+.resume-section:last-child{
+    margin-bottom:0;
+}
+
+/*=========================
+      SCROLL SAFETY
+==========================*/
+
+.resume-container{
+    overflow:hidden;
+}
+
+.left-side,
+.right-side{
+    overflow:hidden;
+}
+
+/*=========================
+      PRINT
+==========================*/
+
+@page{
+    size:A4;
+    margin:0;
+}
+
+@media print{
+
+    html,
+    body{
+        width:210mm;
+        height:297mm;
+        background:#fff !important;
+        margin:0;
+        padding:0;
+        -webkit-print-color-adjust:exact;
+        print-color-adjust:exact;
+    }
+
+    .resume-container{
+        width:210mm;
+        min-height:297mm;
+        margin:0;
+        border-radius:0;
+        box-shadow:none;
+        page-break-after:avoid;
+    }
+
+    .left-side{
+        width:33%;
+    }
+
+    .right-side{
+        width:67%;
+        border-radius:45px 0 0 45px;
+    }
+}
+
+/*=========================
+      TABLET
+==========================*/
+
+@media (max-width:900px){
+
+    .resume-container{
+        width:100%;
+        border-radius:0;
+        margin:0;
+    }
+
+    .sidebar{
+        padding:25px;
+    }
+
+    .right-side{
+        padding:30px;
+    }
+
+    .name{
+        font-size:24px;
+    }
+
+    .resume-section h2{
+        font-size:20px;
+    }
+}
+
+/*=========================
+      MOBILE
+==========================*/
+
+@media (max-width:700px){
+
+    .resume-container{
+        flex-direction:column;
+    }
+
+    .left-side{
+        width:100%;
+    }
+
+    .right-side{
+        width:100%;
+        border-radius:0;
+    }
+
+    .profile-img{
+        width:130px;
+        height:130px;
+    }
+
+    .sidebar{
+        padding:25px;
+    }
+
+    .right-side{
+        padding:25px;
+    }
+}
+
+/*=========================
+      SMALL MOBILE
+==========================*/
+
+@media (max-width:480px){
+
+    .profile-img{
+        width:110px;
+        height:110px;
+    }
+
+    .name{
+        font-size:22px;
+    }
+
+    .designation{
+        font-size:13px;
+    }
+
+    .resume-section h2{
+        font-size:18px;
+    }
+
+    .timeline{
+        padding-left:22px;
+    }
+
+    .timeline h4{
+        font-size:15px;
+    }
+
+    .timeline span,
+    .timeline p{
+        font-size:13px;
+    }
+}

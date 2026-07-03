@@ -1,0 +1,307 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#ececec;
+    font-family:'Poppins',sans-serif;
+    padding:30px;
+}
+
+
+/* ===========================
+   A4 PAGE
+=========================== */
+
+.resume{
+
+    width:210mm;
+    min-height:297mm;
+
+    margin:auto;
+
+    display:flex;
+
+    background:#fff;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+
+/* ===========================
+   LEFT SIDEBAR
+=========================== */
+
+.left-side{
+
+    width:32%;
+
+    background:#163247;
+
+    color:#fff;
+
+    padding:45px 28px;
+
+}
+
+
+/* ===========================
+   RIGHT SIDE
+=========================== */
+
+.right-side{
+
+    width:68%;
+
+    background:#fff;
+
+    padding:45px;
+
+}
+
+
+/* ===========================
+   PROFILE
+=========================== */
+
+.profile{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+
+.profile-img{
+
+    width:145px;
+
+    height:145px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:7px solid rgba(255,255,255,.18);
+
+}
+
+
+.profile h1{
+
+    margin-top:18px;
+
+    font-size:26px;
+
+    line-height:34px;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+}
+
+
+.designation{
+
+    margin-top:8px;
+
+    color:#bfcbd5;
+
+    font-size:15px;
+
+    letter-spacing:1px;
+
+}
+
+
+/* ===========================
+   LEFT BOX
+=========================== */
+
+.left-box{
+
+    margin-bottom:38px;
+
+}
+
+
+.left-box h2{
+
+    font-size:18px;
+
+    margin-bottom:18px;
+
+    padding-bottom:10px;
+
+    position:relative;
+
+    letter-spacing:1px;
+
+}
+
+
+.left-box h2::after{
+
+    content:"";
+
+    width:45px;
+
+    height:3px;
+
+    background:#2ec4ff;
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+}
+
+
+/* ===========================
+   CONTACT
+=========================== */
+
+.contact-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    margin-bottom:15px;
+
+}
+
+
+.contact-item i{
+
+    width:18px;
+
+    font-size:16px;
+
+    color:#2ec4ff;
+
+    flex-shrink:0;
+
+    margin-top:4px;
+
+}
+
+
+.contact-item span{
+
+    flex:1;
+
+    font-size:14px;
+
+    line-height:22px;
+
+    color:#edf3f8;
+
+    overflow-wrap:anywhere;
+
+}
+
+
+/* ===========================
+   ABOUT
+=========================== */
+
+.about-text{
+
+    font-size:14px;
+
+    line-height:26px;
+
+    color:#d7e2ea;
+
+    text-align:justify;
+
+}
+
+
+/* ===========================
+   SKILLS
+=========================== */
+
+.skill-item{
+
+    margin-bottom:18px;
+
+}
+
+
+.skill-item h4{
+
+    font-size:14px;
+
+    margin-bottom:8px;
+
+    font-weight:500;
+
+}
+
+
+.skill-bar{
+
+    width:100%;
+
+    height:7px;
+
+    background:#4c6475;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+
+.skill-fill{
+
+    height:100%;
+
+    background:#2ec4ff;
+
+    border-radius:30px;
+
+}
+
+
+/* ===========================
+   OPTIONAL STAR STYLE
+=========================== */
+
+.skill-stars{
+
+    display:flex;
+
+    gap:4px;
+
+}
+
+.skill-stars i{
+
+    color:#6d8393;
+
+    font-size:13px;
+
+}
+
+.skill-stars .active{
+
+    color:#ffd43b;
+
+}

@@ -14,17 +14,32 @@ body{background: var(--background);}
 .col-div-8{width: 65%; float: left;}
 .col-div-6{width: 50%; float: left; position: relative;}
 .clearfix{clear: both;}
-.resume-main{width: 700px; 
-  background: linear-gradient(var(--one), var(--two));
-  margin: 50px auto;
-  box-shadow:5px 5px 5px 5px #54585d33;
+
+.resume-main{
+    width:750px;
+    background:linear-gradient(var(--one), var(--two));
+    box-shadow:5px 5px 5px 5px #54585d33;
+    overflow:hidden;
+    display:flex;
+    align-items:stretch;
+     margin: 50px auto 80px auto;
 }
-.left-box{width: 35%; float: left; height: 700px;}
-.right-box{width: 65%; float: left; background-color: var(--white);
-  margin: 50px 0px; border-radius: 50px 0px 0px 50px; padding:30px 50px;
-  box-shadow: -7px 2px 15px 2px #54585d52;}
-.profile{width: 150px; height: 150px; border: 3px solid var(--white); 
-  padding: 7px; border-radius: 50%; margin: 20px auto;}
+
+.left-box{width: 35%; float: left; min-height: 700px;
+        margin: auto auto 80px auto;
+}
+.right-box{ width:65%;
+    float:left;
+    background:var(--white);
+    border-radius:50px 0 0 50px;
+    padding:30px 50px;
+    min-height:700px;
+       margin: 50px auto 80px auto;
+  }
+.profile{width: 150px; height: 180px;
+   border: 3px solid var(--white); 
+  padding: 7px; border-radius: 50%;
+   margin: 20px auto;}
 .profile img{width: 100%; border-radius: 50%;}
 .content-box{    padding: 0px 40px 0px 45px;}
 .content-box h2{text-transform: uppercase;font-weight: 500;color: var(--white); 
@@ -56,7 +71,11 @@ body{background: var(--background);}
 .circle{color:var(--white); font-size: 14px!important; margin-top: 7px;}
 .circle1{color:var(--process); font-size: 14px!important; margin-top: 7px;}
 .in{background:var(--white);color: var(--one);padding: 8px;border-radius: 20px; font-size: 14px!important;}
-.inp{color: var(--white); font-size: 11px;}
+.inp{background:var(--white);
+    color:var(--one);
+    padding:8px;
+    border-radius:20px;
+    font-size:14px!important;}
 .col3{text-align: center;}
 h1{font-size: 50px; text-transform: uppercase; color: var(--black); line-height: 50px;}
 h1 span{color: var(--one);}

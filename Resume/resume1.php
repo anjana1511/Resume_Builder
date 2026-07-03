@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="assets/css/resume1.css">
+<link rel="stylesheet" href="../assets/css/resume1.css">
 <body class="w3-light-grey">
 
 <!-- Page Container -->
@@ -14,7 +14,7 @@
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
 		                       <!-- <img src="assets/img/myphoto.jpg" class="img-fluid rounded b-shadow-a" alt=""> -->
-          <img src="assets/img/myphoto.jpg" style="width:100%" alt="Avatar">
+          <img src="../assets/img/myphoto.jpg" style="width:100%" alt="Avatar">
           <div class="w3-display-bottomleft w3-container w3-text-black">
             <h2>Jane Doe</h2>
           </div>

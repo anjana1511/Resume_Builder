@@ -3,183 +3,168 @@ session_start();
 
 if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"]!=true)
 {
-    header("location: login.php");
+    header("location: ../Auth/login.php");
     exit;
 
 } 
-require_once "config.php";
+require_once "../config/config.php";
   
 $mail=$_SESSION['email'];
 
-   include 'header.php';
+include ROOT_PATH.'includes/header.php';
+   
+?>
+<!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
 
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume Design</h2>
+        <p>Pic anyone you want</p>
+      </div><!-- End Section Title -->
 
-                        $sel="select * from users join per_info on users.user_id=per_info.user_id where users.name='$username' and users.email='$mail'";
-            $res=mysqli_query($conn,$sel);
-            $row=mysqli_fetch_array($res);
-            ?>
-<div id="print" class="page">
-              <link href="assets/css/resume1.css"  media='screen,print' rel="stylesheet">
-              <link href="assets/css/style.css"  media='screen,print' rel="stylesheet">
-  <div class='w3-content w3-margin-top' style='max-width:1400px;'>
+      <div class="container">
 
-    <!-- The Grid -->
-    <div class='w3-row-padding'>
-    
-      <!-- Left Column -->
-      <div class='w3-third'>
-      
-        <div class='w3-white w3-text-grey w3-card-4'>
-          <div class='w3-display-container'>
-                             <!-- <img src='assets/img/myphoto.jpg' class='img-fluid rounded b-shadow-a' alt=''> -->
-                   
-            <img src='image/users/<?php echo $row['image'] ?>' style='width:100%' alt='Avatar'>
-            <div class='w3-display-bottomleft w3-container w3-text-black'>
-              <h2><?php echo $row['name']; ?></h2>
-            </div>
-          </div>
-          <div class='w3-container'>
-            <p><i class='fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal'></i>Designer</p>
-            <p><i class='fa fa-home fa-fw w3-margin-right w3-large w3-text-teal'></i><?php echo $row['address']; ?></p>
-            <p><i class='fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal'></i><?php echo $row['email']; ?></p>
-            <p><i class='fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal'></i><?php echo $row['mono']; ?></p>
-            <hr>
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-            <p class='w3-large'><b><i class='fa fa-asterisk fa-fw w3-margin-right w3-text-teal'></i>Skills</b></p>
-              <table class='demo-table'>
-             <tbody>
-                  <?php 
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-modern">Modern</li>
+            <li data-filter=".filter-product">Product</li>
+            <li data-filter=".filter-branding">Branding</li>
+            <li data-filter=".filter-books">Books</li>
+          </ul><!-- End Portfolio Filters -->
 
-                     $id=$_SESSION['id'];
-             $sel1="SELECT * FROM skills WHERE user_id=$id" ;
-           $qur=mysqli_query($conn,$sel1);
-           while($row1=mysqli_fetch_array($qur,MYSQLI_ASSOC))
-           {
-                 ?>
-
-            <tr>
-          <td valign='top'>
-        
-            <p><?php echo $row1['skill']; ?></p>
-              <ul>
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
               <?php
-              for($i=1;$i<=5;$i++) {
-              $selected = '';
-              if(!empty($row1['rate']) && $i<=$row1['rate']) {
-              $selected = 'selected';
-              }
+              $categories = ['modern', 'minimal'];
+
+              foreach ($categories as $category) {
+
+                  $dir = "../templates/" . $category;
+
+                  if (!is_dir($dir)) {
+                      continue;
+                  }
+
+                  $templates = scandir($dir);
+              
+     
+                  foreach ($templates as $temp) {
+
+                      if ($temp == "." || $temp == "..") {
+                          continue;
+                      }
+
+                  //     // Sirf folders hi lena
+                      if (!is_dir($dir . "/" . $temp)) {
+                          continue;
+                      }
               ?>
-              <li class="<?php echo $selected;?>" >&#9733;</li>  
-              <?php 
-              } //for  ?>
-            <ul></td></tr>
-           
-           <?php } ?>  </table>
-           
-            <br>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-<?php echo $category; ?>">
+              <img src="<?php echo BASE_URL; ?>/templates/<?php echo $category; ?>/<?php echo $temp; ?>/preview.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4><?php echo ucfirst($category); ?> Resume</h4>
+                <p><?php echo ucfirst($category); ?> Resume Template</p>
+                <a href="<?php echo BASE_URL; ?>/templates/<?php echo $category; ?>/<?php echo $temp; ?>/preview.png" 
+                title="App 1" data-gallery="portfolio-gallery-<?php echo $category; ?>" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="<?php echo BASE_URL; ?>/templates/resume.php?category=<?php echo $category; ?>&template=<?php echo $temp;?>" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+<?php
+    }
+}
+?>
+          </div><!-- End Portfolio Container -->
 
-            <p class='w3-large w3-text-theme'><b><i class='fa fa-globe fa-fw w3-margin-right w3-text-teal'></i>Languages[not users ]</b></p>
-            <p>English</p>
-            <div class='w3-light-grey w3-round-xlarge'>
-              <div class='w3-round-xlarge w3-teal' style='height:24px;width:100%'></div>
-            </div>
-            <p>Spanish</p>
-            <div class='w3-light-grey w3-round-xlarge'>
-              <div class='w3-round-xlarge w3-teal' style='height:24px;width:55%'></div>
-            </div>
-            <p>German</p>
-            <div class='w3-light-grey w3-round-xlarge'>
-              <div class='w3-round-xlarge w3-teal' style='height:24px;width:25%'></div>
-            </div>
-            <br>
-          </div>
-        </div><br>
+        </div>
 
-      <!-- End Left Column -->
       </div>
 
-      <!-- Right Column -->
-      <div class='w3-twothird'>
-      <!-- Start work experience -->
-      
-        <div class='w3-container w3-card w3-white w3-margin-bottom'>
-          <h2 class='w3-text-grey w3-padding-16'><i class='fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal'></i>Work Experience</h2>
-          <?php 
-      
-      $qur=mysqli_query($conn,"SELECT * FROM exe_info where user_id=$id"); 
-          while($qow=mysqli_fetch_array($qur,MYSQLI_ASSOC))
-        {
-      ?>
-      <div class='w3-container'>
-       
-            <h5 class='w3-opacity'><b><?php echo $qow['position']; ?> / <?php echo $qow['company_name']; ?></b></h5>
-            <h6 class='w3-text-teal'><i class='fa fa-calendar fa-fw w3-margin-right'></i><?php echo $qow['duration']; ?> <!--<span class='w3-tag w3-teal w3-round'>Current</span> --></h6>
-            <p><?php echo $qow['work']; ?></p>
-            <hr>
-          </div>
-        <?php } ?>
-      </div> 
-  <!-- End work experience -->
-      <!-- Education -->
-        <div class='w3-container w3-card w3-white'>
-          <h2 class='w3-text-grey w3-padding-16'><i class='fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal'></i>Education</h2>
-      <?php 
-      $qu=mysqli_query($conn,"SELECT * FROM edu_info where user_id=$id"); 
-          while($qo=mysqli_fetch_array($qu,MYSQLI_ASSOC))
-        {
-      ?>
-          <div class='w3-container'>
-            <h5 class='w3-opacity'><b><?php echo $qo['qualification'] ?></b></h5>
-            <h6 class='w3-text-teal'><i class='fa fa-calendar fa-fw w3-margin-right'></i><?php echo $qo['passyear']; ?></h6>
-            <p><?php echo $qo['board']; ?></p><p><?php echo $qo['per']; ?>&nbsp;<?php echo $qo['rtype']; ?></p>
-        
-        <hr>
-          </div>
-        <?php } ?>
+    </section><!-- /Portfolio Section -->
 
-        </div>
-      
-       <div class='w3-container w3-card w3-white'>
-          <h2 class='w3-text-grey w3-padding-16'><i class='fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal'></i>Additional Certificate</h2>
-      <?php 
-      $cqu=mysqli_query($conn,"SELECT * FROM add_cer where user_id=$id"); 
-          while($cer=mysqli_fetch_array($cqu,MYSQLI_ASSOC))
-        {
-      ?>
-          <div class='w3-container'>
-            <h5 class='w3-opacity'><b><?php echo $cer['cname'] ?></b></h5>
-            <h6 class='w3-text-teal'><i class='fa fa-calendar fa-fw w3-margin-right'></i>2020</h6>
-            <p><?php echo $qo['cdetails']; ?></p>
-        
-        <hr>
-          </div>
-        <?php } ?>
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
 
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Have any questions?
+            Feel free to contact us using the form below.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-5">
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>A108 Adam Street, New York, NY 535022</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Us</h3>
+                  <p>+1 5589 55488 55</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>info@example.com</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
         </div>
 
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+          <div class="row gy-4">
 
-      </div>    <!-- End Right Column -->
-    
-      
-    <!-- End Grid -->
-    </div>
-    
-    <!-- End Page Container -->
-  </div>
-</div>
-<button class="btn btn-success"  onClick="PrintDiv();"><i class="fa fa-print"></i> Print</button>
-   <?php
-include 'footer.php';
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+            </div>
+
+            <div class="col-md-6 ">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+            </div>
+
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+
+              <button type="submit">Send Message</button>
+            </div>
+
+          </div>
+        </form><!-- End Contact Form -->
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+<?php
+include ROOT_PATH.'includes/footer.php';
  ?>
-</body>
-          <script type="text/javascript">     
-          function PrintDiv() {    
-           var divToPrint = document.getElementById('print');
-           var popupWin = window.open('', '_blank');
-           popupWin.document.open();
-           popupWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</html>');
-            popupWin.document.close();
-                }
-     </script>
-</html> 
-?>

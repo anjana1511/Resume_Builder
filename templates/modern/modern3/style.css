@@ -1,0 +1,563 @@
+/*====================================
+    RESET
+=====================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#e9e9e9;
+    font-family:'Poppins',sans-serif;
+    color:#444;
+}
+
+/*====================================
+      A4 RESUME
+=====================================*/
+
+.resume-container{
+    width:210mm;
+    min-height:297mm;
+    margin:20px auto;
+    display:flex;
+    background:#fff;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+/*====================================
+      LEFT SIDEBAR
+=====================================*/
+
+.left-side{
+    width:34%;
+    background:#cfdbd5;
+    color:#003459;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Decorative White Lines */
+
+.left-side::before{
+
+    /* content:"";
+
+    position:absolute;
+
+    width:120px;
+
+    height:6px;
+
+    background:#003459;
+
+    transform:rotate(45deg);
+
+    top:45px;
+
+    left:-20px; */
+
+     content: "";
+    position: absolute;
+    top: -200px;
+    left: -10px;
+    width: 480px;
+    height: 350px;
+    background: #003459;
+    transform: rotate(45deg);
+    
+
+}
+
+.left-side::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+
+    height:6px;
+
+    background:#ffffff;
+
+    transform:rotate(45deg);
+
+    right:-240px;
+
+    top:204px;
+
+}
+
+/*====================================
+      SIDEBAR CONTENT
+=====================================*/
+
+.sidebar{
+    position:relative;
+    z-index:2;
+    padding:40px 28px;
+}
+
+/*====================================
+      PROFILE
+=====================================*/
+
+.profile-box{
+    position:relative;
+    width:170px;
+    margin:20px auto 45px;
+}
+
+.profile-img{
+width:120px;
+    height:145px;
+    display:block;
+    margin:auto;
+    object-fit:cover;
+    border:6px solid #fff;
+    position:relative;
+    z-index:5;
+}
+
+.profile-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:99px;
+
+    height:99px;
+
+    border:5px solid #fff;
+    background:#003459;
+
+    left:10px;     /* Center nahi */
+
+    top:47px;
+
+    z-index:2;
+
+}
+/* .profile-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:34px;
+
+    height:34px;
+
+    background:#fff;
+
+    top:-10px;
+
+    right:48px;
+
+    clip-path:polygon(0 0,100% 0,100% 100%);
+
+    z-index:1;
+
+} */
+
+.name{
+
+ margin-top:25px;
+    font-size:26px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    line-height:32px;
+
+    color:#003459;
+
+    margin-bottom:6px;
+
+}
+
+.name span{
+
+    display:block;
+
+    font-weight:300;
+
+}
+
+.designation{
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:#003459;
+
+}
+
+/*====================================
+      SIDEBAR SECTION
+=====================================*/
+
+.sidebar-section{
+
+    margin-top:32px;
+
+}
+
+.sidebar-section h3{
+
+    font-size:18px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    margin-bottom:18px;
+
+    position:relative;
+
+    padding-bottom:8px;
+
+}
+
+.sidebar::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:99px;
+
+    height:99px;
+
+    border:5px solid #fff;
+    background:#003459;
+
+    right:62px;
+
+    top:49px;
+
+}
+
+.sidebar-section h3::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:55px;
+
+    height:2px;
+
+    background:#fff;
+
+}
+
+/*====================================
+      CONTACT
+=====================================*/
+
+.contact-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    margin-bottom:14px;
+
+}
+
+.contact-item i{
+
+    width:30px;
+
+    height:30px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    color:#003459;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    font-size:14px;
+
+}
+
+.contact-item span{
+
+    font-size:13px;
+
+    line-height:20px;
+
+    word-break:break-word;
+
+}
+
+/*====================================
+      SKILLS / LANGUAGE
+=====================================*/
+.skill-vline{
+    display:inline-block;
+    position:relative;
+    padding:0 6px;
+}
+
+.skill-vline:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    right:0;
+    top:50%;
+    transform:translateY(-50%);
+    width:2px;
+    height:14px;
+    background:#ffffff;
+}
+
+
+.language-circle{
+    display:flex;
+    gap:3px;
+}
+
+.language-circle i{
+    color:#003459;
+    font-size:13px;
+}
+
+.language-circle .active{
+    color:#003459;
+}
+
+
+.language-item{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+.language-bar{
+
+    margin-bottom:16px;
+
+}
+
+/*====================================
+      INTERESTS
+=====================================*/
+
+.interest-item{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+}
+
+.interest-item span{
+
+    border:1px solid #003459;
+
+    padding:5px 12px;
+
+    border-radius:30px;
+
+    font-size:12px;
+    background-color: #ffff;
+
+}
+/*====================================
+            RIGHT SIDE
+=====================================*/
+
+.right-side{
+    width:66%;
+    background:#fcfcfc;
+    padding:45px;
+}
+
+/*====================================
+        RESUME SECTION
+=====================================*/
+
+.resume-section{
+    margin-bottom:35px;
+}
+
+.resume-section:last-child{
+    margin-bottom:0;
+}
+
+/*====================================
+        SECTION TITLE
+=====================================*/
+
+.resume-section h2{
+    font-size:22px;
+    color:#003459;
+    text-transform:uppercase;
+    margin-bottom:22px;
+    position:relative;
+    letter-spacing:1px;
+    font-weight:700;
+}
+
+.resume-section h2::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:65px;
+    height:3px;
+    background:#003459;
+}
+
+/*====================================
+            PROFILE
+=====================================*/
+
+.resume-section p{
+    font-size:14px;
+    color:#555;
+    line-height:26px;
+    text-align:justify;
+}
+
+/*====================================
+            TIMELINE
+=====================================*/
+
+.timeline{
+    position:relative;
+    padding-left:28px;
+    margin-bottom:28px;
+}
+
+.timeline:last-child{
+    margin-bottom:0;
+}
+
+/* Dot */
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:8px;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#003459;
+}
+
+/* Vertical Line */
+
+.timeline::after{
+    content:"";
+    position:absolute;
+    left:5px;
+    top:22px;
+    bottom:-18px;
+    width:2px;
+    background:#cfdbd5;
+}
+
+.timeline:last-child::after{
+    display:none;
+}
+
+/*====================================
+        TIMELINE TEXT
+=====================================*/
+
+.timeline h4{
+    font-size:17px;
+    color:#333;
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.timeline span{
+    display:block;
+    font-size:13px;
+    color:#888;
+    margin-bottom:8px;
+    line-height:20px;
+}
+
+.timeline p{
+    font-size:14px;
+    color:#555;
+    line-height:24px;
+}
+
+/*====================================
+      LONG CONTENT SUPPORT
+=====================================*/
+
+.timeline,
+.timeline p,
+.timeline span,
+.resume-section p{
+    word-break:break-word;
+    overflow-wrap:break-word;
+}
+
+/*====================================
+        SECTION DIVIDER
+=====================================*/
+
+.resume-section:not(:last-child){
+    padding-bottom:20px;
+    border-bottom:1px solid #ececec;
+}
+
+/*====================================
+        PROGRESS BAR
+=====================================*/
+/* 
+.language-progress{
+    width:100%;
+    height:7px;
+    background:rgba(255,255,255,.25);
+    border-radius:30px;
+    overflow:hidden;
+    margin:6px 0 18px;
+}
+
+.language-progress-fill{
+    height:100%;
+    background:#ffffff;
+    border-radius:30px;
+    transition:.4s;
+} */
+
